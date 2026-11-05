@@ -5,73 +5,141 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Echelon Shop — DGIREAH</title>
 <style>
-:root{--navy:#0a1730;--crest:#111e36;--panel:#152a52;--royal:#1f4fa3;--royal-bright:#4a86e8;--cream:#f3e7c4;--cream-dim:#cdbf9d;--gold:#c9a227}
+:root{
+  --paper:#faf8f3;
+  --card:#ffffff;
+  --ink:#2e2c28;
+  --ink-soft:#5c584f;
+  --gold:#b08a1e;
+  --gold-deep:#8f6d12;
+  --line:#e7e0d0;
+  --shadow:0 2px 6px rgba(60,50,20,.06),0 12px 28px rgba(60,50,20,.07);
+}
 *{box-sizing:border-box}
-body{margin:0;background:linear-gradient(180deg,#0a1730 0%,#111e36 55%,#0a1730 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;text-align:center;padding:32px 18px 40px}
-.wrap{max-width:720px;margin:0 auto}
-.seal{width:92px;height:92px;margin:6px auto 18px;border:3px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:42px;color:var(--gold);background:rgba(201,162,39,.05)}
-h1{font-size:27px;letter-spacing:3px;margin:0 0 8px;color:var(--cream);font-weight:normal}
-.sub{letter-spacing:2px;font-size:13px;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
-.ready{font-size:17px;margin:0 0 26px;color:var(--cream)}
-.enter{display:inline-block;margin:26px 0 6px;padding:15px 42px;border:2px solid var(--gold);border-radius:8px;background:var(--royal);color:#fff;text-decoration:none;letter-spacing:3px;font-size:16px}
-.enter:hover{background:var(--royal-bright)}
-section{margin-top:38px}
-.card{border:1px solid var(--royal);border-radius:10px;padding:18px 20px;margin:18px 0;background:rgba(31,79,163,.12);text-align:center}
-.card-title{margin:0 0 8px;font-size:19px;font-weight:normal;letter-spacing:1px;color:var(--cream)}
-.card-note{margin:0 0 12px;font-size:15px;font-style:italic;color:var(--cream-dim)}
-.price{margin:0;font-size:18px;color:var(--gold);letter-spacing:1px}
-footer{margin-top:42px;padding-top:22px;border-top:1px solid var(--royal)}
-footer p{margin:0;font-size:15px;color:var(--cream-dim);letter-spacing:1px}
-.backdoor{display:inline-block;margin:0 0 22px;padding:10px 22px;border:2px solid var(--gold);border-radius:8px;color:var(--cream);text-decoration:none;letter-spacing:2px;font-size:13px}
-.backdoor:hover{background:rgba(201,162,39,.15)}
-.backdoor.bottom{margin:26px 0 0}
-.directives-title{font-size:23px;letter-spacing:3px;margin:26px 0 10px;color:var(--cream);font-weight:normal}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px 56px}
+header.top{padding:30px 0 8px;text-align:center}
+.wordmark{font-family:Georgia,'Times New Roman',serif;font-size:34px;letter-spacing:4px;margin:0;color:var(--ink);font-weight:normal}
+.wordmark .amp{color:var(--gold)}
+nav{margin-top:10px;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft)}
+nav a{color:var(--ink-soft);text-decoration:none}
+nav a:hover{color:var(--gold-deep);text-decoration:underline}
+nav .sep{margin:0 10px;color:var(--gold)}
+.welcome{margin:26px auto 6px;max-width:680px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px 28px}
+.welcome p{margin:0;font-family:Georgia,'Times New Roman',serif;font-size:19px;color:var(--ink)}
+.welcome .sub{margin-top:6px;font-size:14.5px;color:var(--ink-soft);font-family:inherit}
+h2.section{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:24px;letter-spacing:2.5px;margin:46px 0 4px;color:var(--ink)}
+.section-rule{height:3px;width:64px;background:var(--gold);border-radius:2px;margin:8px 0 22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px 22px 24px;display:flex;flex-direction:column}
+.cover{border-radius:8px;padding:26px 16px 22px;text-align:center;margin-bottom:18px;min-height:168px;display:flex;flex-direction:column;justify-content:center}
+.cover-code{background:linear-gradient(160deg,#fdf6dd,#f3e5bb);border:1px solid #ddc87e}
+.cover-generals{background:linear-gradient(160deg,#f3efe6,#e6ddcb);border:1px solid #cfc3a6}
+.cover-quotes{background:linear-gradient(160deg,#fdfaf2,#f6ecd4);border:1px solid #e0d0a0}
+.cover .cover-title{font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:1.3;margin:0;color:var(--ink)}
+.cover .cover-author{margin:10px 0 0;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-deep)}
+.cover .cover-rule{width:44px;height:2px;background:var(--gold);margin:12px auto 0;border-radius:2px}
+.tag{align-self:flex-start;background:#f7efda;color:var(--gold-deep);border:1px solid #e4d194;font-size:12px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;border-radius:999px;padding:4px 11px;margin-bottom:12px}
+.card h3{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:20px;margin:0 0 4px;line-height:1.3}
+.byline{margin:0 0 6px;font-size:13.5px;color:var(--ink-soft)}
+.edition{margin:0 0 10px;font-size:13.5px;letter-spacing:.6px;color:var(--gold-deep);font-weight:600;text-transform:uppercase}
+.blurb{margin:0 0 16px;font-size:15px;color:var(--ink-soft);flex-grow:1}
+.price{margin:0;font-size:21px;font-weight:700;color:var(--ink)}
+.price .gold{color:var(--gold-deep)}
+.price-note{margin:6px 0 0;font-size:14px;color:var(--ink-soft)}
+.shoes-card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:28px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between}
+.shoes-card .txt{max-width:620px}
+.shoes-card h3{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:21px;margin:0 0 6px}
+.shoes-card p{margin:0;font-size:15px;color:var(--ink-soft)}
+.btn{display:inline-block;background:var(--gold);color:#fff;text-decoration:none;font-weight:600;letter-spacing:1.2px;font-size:14.5px;padding:14px 26px;border-radius:10px;white-space:nowrap}
+.btn:hover{background:var(--gold-deep)}
+footer{margin-top:54px;padding-top:24px;border-top:1px solid var(--line);text-align:center}
+.backlink{display:inline-block;color:var(--gold-deep);text-decoration:none;font-size:15px;letter-spacing:1px;margin-bottom:10px}
+.backlink:hover{text-decoration:underline}
+footer p{margin:0;font-size:13.5px;color:var(--ink-soft);letter-spacing:.6px}
+@media (max-width:560px){
+  .wordmark{font-size:27px;letter-spacing:3px}
+  .shoes-card{justify-content:center;text-align:center}
+  .shoes-card .txt{max-width:100%}
+}
 </style>
-
 </head>
 <body>
 <div class="wrap">
-<a class="backdoor" href="/">&larr; Back to the Kingdom</a>
-<header>
-<div class="seal">D</div>
-<h1>ECHELON SHOP</h1>
-<p class="sub">The Kingdom of DGIREAH</p>
-<p class="ready">The shop of the house — books of the Kingdom, and the shoes of Echelon Fashion.</p>
+<header class="top">
+<p class="wordmark">ECHELON SHOP</p>
+<nav><a href="#books">Literature &amp; Books</a><span class="sep">&middot;</span><a href="#shoes">Shoes</a><span class="sep">&middot;</span><a href="/">&larr; Back to the Kingdom</a></nav>
 </header>
 
-<section>
-<h2 class="directives-title">LITERATURE &amp; BOOKS</h2>
-<div class="card">
-<h3 class="card-title">The Dgireahian Code — Book One</h3>
-<p class="card-note">The novel edition — the first book of the Kingdom, complete at nine ninety-nine.</p>
-<p class="price">$9.99</p>
+<div class="welcome">
+<p>Welcome to the Echelon Shop — the Kingdom&rsquo;s bookstore and storefront.</p>
+<p class="sub">Browse the books of the Kingdom, and step through to the shoe store of Echelon Fashion.</p>
 </div>
+
+<section id="books">
+<h2 class="section">LITERATURE &amp; BOOKS</h2>
+<div class="section-rule"></div>
+<div class="grid">
+
 <div class="card">
-<h3 class="card-title">The Book of the Generals</h3>
-<p class="card-note">The multimedia reading edition — narration and illustrations, page by page. First online issue in production.</p>
-<p class="price">$19.95</p>
+<div class="cover cover-code">
+<p class="cover-title">The Dgireahian Code</p>
+<p class="cover-author">Book One</p>
+<div class="cover-rule"></div>
 </div>
+<span class="tag">Novel edition</span>
+<h3>The Dgireahian Code — Book One</h3>
+<p class="byline">by Gezzuz-jefe Ben Israel Judah</p>
+<p class="edition">Novel edition (text)</p>
+<p class="blurb">The first book of the Kingdom — a door-opener meant to incite hope.</p>
+<p class="price"><span class="gold">$9.99</span></p>
+</div>
+
 <div class="card">
-<h3 class="card-title">Quotes of the King</h3>
-<p class="card-note">The verified words of the King, gathered in one booklet.</p>
-<p class="price">Download $0.77 &middot; Paperback $7.77</p>
-<p class="card-note" style="margin-top:10px">Leather-bound edition $77 from January 17, 2027.</p>
+<div class="cover cover-generals">
+<p class="cover-title">The Book of the Generals</p>
+<p class="cover-author">Multimedia Reading Edition</p>
+<div class="cover-rule"></div>
+</div>
+<span class="tag">First online issue in production</span>
+<h3>The Book of the Generals</h3>
+<p class="edition">Multimedia reading edition</p>
+<p class="blurb">The Generals read aloud page by page, with illustrations appearing as each page turns.</p>
+<p class="price"><span class="gold">$19.95</span></p>
+</div>
+
+<div class="card">
+<div class="cover cover-quotes">
+<p class="cover-title">Quotes of the King</p>
+<p class="cover-author">146 Verified Quotes</p>
+<div class="cover-rule"></div>
+</div>
+<span class="tag">Booklet</span>
+<h3>Quotes of the King</h3>
+<p class="edition">Download &amp; paperback</p>
+<p class="blurb">146 verified quotes of the King, gathered in one booklet.</p>
+<p class="price">Download <span class="gold">$0.77</span> &middot; Paperback <span class="gold">$7.77</span></p>
+<p class="price-note">Leather-bound coffee-table edition — <strong>$77</strong> from January 17, 2027.</p>
+</div>
+
 </div>
 </section>
 
-<section>
-<h2 class="directives-title">SHOES</h2>
-<div class="card">
-<h3 class="card-title">Echelon Fashion — SIG Shoes</h3>
-<p class="card-note">The Gold Seal S.I.G. line — designed by Echelon Fashion, made in Italy, sold through AliveShoes.</p>
+<section id="shoes">
+<h2 class="section">SHOES</h2>
+<div class="section-rule"></div>
+<div class="shoes-card">
+<div class="txt">
+<h3>Echelon Fashion — SIG Shoes</h3>
+<p>The Gold Seal line — SIG shoes by Echelon Fashion, made in Italy, sold through the Echelon Fashion store on AliveShoes.</p>
 </div>
-<a class="enter" href="https://www.aliveshoes.com/Echelonfashion">ECHELON FASHION — THE SHOE STORE</a>
+<a class="btn" href="https://www.aliveshoes.com/Echelonfashion">ECHELON FASHION — THE SHOE STORE</a>
+</div>
 </section>
 
-<br>
-<a class="backdoor bottom" href="/">&larr; Back to the Kingdom</a>
 <footer>
-<p>All initiatives will be organized by Spiffy, personal assistant.</p>
+<a class="backlink" href="/">&larr; Back to the Kingdom</a>
+<p>Echelon Shop — a storefront of DGIREAH</p>
 </footer>
 </div>
 <script data-goatcounter="https://dgireahia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
