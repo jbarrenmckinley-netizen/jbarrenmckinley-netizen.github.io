@@ -1,0 +1,6 @@
+Site build note — dgireahia.com
+Republished 2026-11-20 (America/Chicago) at the direction of the site's owner.
+Reason: an older variant of the homepage text was intermittently served to some
+visitors although the repository itself was unchanged. This note forces a fresh
+build and re-propagation of the settled site exactly as it stands in the
+repository. No page content was changed by this republication.
